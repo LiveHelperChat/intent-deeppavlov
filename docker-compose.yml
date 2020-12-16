@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  deeppavlov-intent:
+    build: ./Dockerfiles/deep
+    container_name: deeppavlov-intent
+    image: deeppavlov-intent:latest
+    ports:
+      - "5000:5000"
+    networks:
+      - code-network
+    restart: always
+networks:
+  code-network:
+    driver: bridge
